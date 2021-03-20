@@ -1,0 +1,626 @@
+/*fonts*/
+
+@font-face {
+    font-family: "SourceSansPro-Light";
+    src: url("../images/fonts/SourceSansPro-Light.ttf");
+}
+
+@font-face {
+    font-family: "SourceSansPro-Regular";
+    src: url("../images/fonts/SourceSansPro-Regular.ttf");
+}
+
+@font-face {
+    font-family: "SourceSansPro-Bold";
+    src: url("../images/fonts/SourceSansPro-Bold.ttf");
+}
+
+/*hides scrollbar*/
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+/*utilities*/
+.vertical-center {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+.image-center {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+.bg-recolor-white {
+    background-color: white;
+}
+
+.bg-recolor-blue {
+    background-color: #3498db;
+}
+
+.bg-recolor-lightBlue {
+    background-color: #3498db;
+}
+
+.bg-recolor-offWhite {
+    background-color: #f0f2f4;
+}
+
+.bg-recolor-lightGray {
+    background-color: #e4e4e4;
+}
+
+.removeSpacing {
+    border: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.collapsingMargins {
+    padding-top: 1px; /*for the purpose of the collapsing margin*/
+    padding-bottom: 1px; /*for the purpose of the collapsing margin*/
+}
+
+/*HTML elements*/
+
+#currentDay {
+    height: 92.65vh;
+    background-image:
+        linear-gradient(#71ccee, #a0d6ea);
+    overflow: hidden;
+}
+
+#homeSun {
+    width: 23.54vh;
+    height: 24vh;
+    display: block;
+    padding-top: 3.50vh;
+    padding-bottom: .1vh;
+    margin-right: auto;
+    margin-left: auto;
+    z-index: 2;
+
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+
+    -webkit-animation-delay: .3s;
+    animation-delay: .3s;
+}
+
+.clouds {
+    position: absolute;
+    z-index: 1;
+
+    -webkit-animation-delay: 2s;
+    animation-delay: .7s;
+}
+
+.clouds1 {
+    width: 30.27vw;
+    height: 3.52vh;
+}
+
+.clouds2 {
+    width: 33.40vw;
+    height: 10vh;
+}
+
+.clouds3 {
+    width: 44.67vw;
+    height: 15.89vh;
+}
+
+#cloud1 {
+    top: -3vh;
+    left: -9.5vh;
+}
+
+#cloud2 {
+    top: 5vh;
+    right: -3vh;  
+}
+
+#cloud3 {
+    top: 15vh;
+    right: -7vh;
+}
+
+#cloud4 {
+    top: 20vh;
+    left: -3vh;
+}
+
+#mainText {
+    position: static;
+    font-family: Helvetica;
+    font-size: 12vh;
+    letter-spacing: 1.5vw;
+    left: 1.5vw;
+    margin-top: 1vh;
+    margin-bottom: 0vh;
+}
+
+.line {
+    position: static;
+    height: 5px;
+    border: 0px solid #a2a6ad;
+    border-top-width: 1px;
+    width: 70vw;
+    margin-top: 0vh;
+    margin-bottom: .5vh;
+}
+
+#byLineText {
+    position: static;
+    top: 19.5vh;
+    text-align: center;
+    font-size: 2.5vh;
+    letter-spacing: 1.5vw;
+    font-weight: bold;
+}
+
+#startDay {
+    display: block;
+    width: 84.3vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 24vh;
+}
+
+#footerNavBar {
+    height: 7.35vh;
+    background-color: white;
+}
+
+#navbarBottom {
+    height: 7.35vh;
+    margin: 0px;
+    border-top: 1px solid #9297a3;
+    overflow: hidden;
+}
+
+#navbarBottomInner {
+    height: 7.35vh;
+    width: 86vw;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.navbar li{
+  display: inline-block;
+  float: none;
+}
+
+.navbar-nav>li>a {
+    margin-left: 1vw;
+    margin-right: 1vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+.navbarBottomText {
+    font-size: 1.56vh;
+    display: block;
+    margin-top: -.4vh;
+    color: #9297a3;
+}
+
+.navbarBottomIcon {
+    height: 4.8vh;
+    width: 6.72vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-top: -.2vh;
+}
+#sun {
+    width: 6.8vw;
+}
+
+.topHeader {
+    height: 7.82vh;
+    padding-bottom: 0vh;
+    border-bottom: 1px solid #9297a3;
+}
+
+.topHeaderInner {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.topHeaderText {
+    margin: 0vh;
+    font-size: 3.08vh;
+    display: inline;
+    position: relative;
+    top: 3vh;
+    left: .3vw;
+}
+
+.logo {
+    width: 9vw;
+    height: 5vh;
+    position: relative;
+    top: 2.5vh;
+}
+
+#timingBody {
+    height: 85vh;
+}
+
+.timingTitleFont {
+    color: #555454;
+    margin-top: 0vh;
+    margin-bottom: 0vh;
+    font-size: 4.2vh;
+}
+
+#productive {
+    padding-top: 2.5vh;
+}
+
+.timingText {
+    font-size: 11.22vh;
+}
+
+#productiveTime {
+    color: #1ABC9C;
+    margin: 0vh;
+    padding: 0vh;
+}
+
+#wastedTime {
+    color: #E74C3C;
+    margin: 0vh;
+    padding: 0vh;
+}
+
+#efficiencyPercent {
+    color: #3498db;
+    margin: 0vh;
+    padding: 0vh;
+}
+
+#buttonRow {
+    position: relative;
+    left: .7vw;
+}
+
+.timeButton {
+     width: 40vw;
+    height: 10vh;
+}
+
+.row-slim {
+    margin: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#buttonWrapper {
+    position: relative;
+    left: .3vw;
+}
+
+.dayButton {
+    float: none;
+    display: block;
+    width: 82.7vw;
+    height: 8vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#controlButtons {
+    position: relative;
+    top: 2vh;
+    height: 19.1vh;
+}
+
+#pauseDay {
+    margin-top: 0vh;
+    float: none;
+    position: relative;
+    bottom: .5vh;
+}
+
+#controlButtonsToggle {
+    position: relative;
+    top: 1.56vh;
+}
+
+#controlButtonsToggleFinal {
+    position: relative;
+    top: 1.56vh;
+}
+
+#stopDay {
+    margin-top: 1.56vh;
+}
+
+#saveDay {
+    margin-top: 1.56vh;
+}
+
+#statBody {
+    height: 84vh;
+    overflow-y: auto;
+    padding-top: 1px; /*for the purpose of the collapsing margin*/
+    padding-bottom: 1px; /*for the purpose of the collapsing margin*/
+}
+
+.statText {
+    text-transform: none;
+    color: #303236;
+}
+
+.statTextWasted {
+    position: relative;
+    left: -2vw;
+}
+
+.statTextHeader {
+    font-family: SourceSansPro-Bold;
+    font-size: 2.5vh;
+}
+
+.statTextBody {
+    font-family: SourceSansPro-Regular;
+    font-size: 2.3vh;
+    margin-top: -1vh;
+}
+
+.statTextBody2 {
+    position: relative;
+    top: -1vh;
+}
+
+.statBox {
+    margin-top: -1px;
+    border-top: 1px solid #bbbdc2;
+    border-bottom: 1px solid #bbbdc2;
+
+}
+
+.lastStatBox {
+    border-bottom: none;
+}
+
+.statBoxInner {
+    margin-top: 1vh;
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#trendsBody {
+    height: 84vh;
+    overflow-y: auto;
+    position: relative;
+    padding-top: 1px; /*for the purpose of the collapsing margin*/
+    padding-bottom: 1px; /*for the purpose of the collapsing margin*/
+}
+
+.graphBox {
+    margin-top: 2.76vw;
+    margin-right: 2.76vw;
+    margin-left: 2.76vw;
+}
+
+.graphBoxInner {
+    padding: 0px 3vw;
+    padding-top: 3vw;
+    padding-bottom: 3vw;
+}
+
+.graphBoxTitle {
+    text-align: left;
+    color: #303236;
+    font-size: 2.8vh;
+    text-transform: none;
+    font-family: SourceSansPro-Light;
+}
+
+.graphContainer {
+    width: 87.88vw;
+    height: 25vh;
+    position: relative;
+    left: -2.55vw;
+    margin-top: 2vh;
+}
+
+.slider {
+    width: 87.88vw;
+}
+
+.ui-slider-horizontal {
+    height: 2.5vh;
+}
+
+.ui-slider .ui-slider-handle {
+    height: 3.4vh;
+    width: 3.4vh;
+}
+
+.ui-slider-segment {
+    margin-top: .8vh !important;
+}
+
+#helpBody {
+    height: 84vh;
+    overflow-y: auto;
+    position: relative;
+    padding-top: 1px; /*for the purpose of the collapsing margin*/
+    padding-bottom: 1px; /*for the purpose of the collapsing margin*/
+}
+
+.helpText {
+    text-transform: none;
+    color: #303236;
+}
+
+.demoButton {
+    display: block;
+    width: 50vw;
+    height: 7vh;
+    font-size: 1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    border-radius: 4vh;
+    height: 8.5vh;
+    font-size: 3.4vh;
+}
+
+.helpBodyText {
+    font-size: .8em;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+#helpQuote {
+    margin-top: 3vh;
+    margin-bottom: 0vh;
+}
+
+blockquote {
+    border: none;
+}
+
+blockquote p {
+    font-size: 3.4vh;
+}
+
+blockquote footer {
+    background: none;
+    font-size: 2.5vh;
+}
+
+#helpLine {
+    border: 0px solid #9297a3; 
+    border-top-width: 1px;
+    width: 85vw;
+}
+
+#helpBodyTextContainer {
+    width: 85vw;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.helpBodyText {
+    font-size: 2.5vh;
+    text-align: center;
+}
+
+#pieChartContainer {
+    height: 40vh;
+    position: static;
+}
+
+#hoursPieChart {
+    width: 70vw !important; /*!important necessary because for some reason chart.js adds imbedded width/height styling to the piechart*/
+    height: 70vw !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pieLegend {
+    text-transform: none;
+    color: #303236;
+    font-size: 2.8vh;
+    font-family: "SourceSansPro-Light";
+    margin-top: 2vh;
+}
+
+.legendBox {
+    display: inline-block;
+    height: 2vh;
+    width: 8vw;
+    margin-right: 3vw;
+}
+
+#totalStartTimeLegendBox {
+    background-color: #1abc9c;
+}
+
+#totalStopTimeLegendBox {
+    background-color: #e74c3c;
+}
+
+input {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Compatibility Media Queries */
+
+/* small devices */
+@media only screen and (min-height: 200px) and (max-height: 550px){
+    #startDay {
+    display: block;
+    width: 84.3vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 22vh;
+    }
+
+    .timingText {
+        font-size: 11vh;
+    }
+
+    .statTextBody {
+        font-size: 2.4vh;
+    }
+
+    .statTextHeader {
+        font-size: 2.7vh;
+    }
+
+    #trendsBody {
+        height: 82.5vh;
+    }
+
+    #navbarBottomInner {
+        margin-top: .4vh;
+    }
+
+    #pieLegendContainer {
+        margin-top: 4vh;
+    }
+}
+
+/* tablets */
+@media only screen and (min-height: 800px) and (max-height: 1800px) {
+    #trendsBody {
+        height: 84vh;
+    }
+
+    #statBody {
+        height: 84vh;
+    }
+
+    #helpBody {
+        height: 84vh;
+    }
+
+    #navbarBottom {
+        height: auto;
+    }
+
+    .navbarBottomText {
+        margin-top: .5vh;
+        margin-bottom: -.7vh;
+    }
+
+    #pieLegendContainer {
+        margin-top: 7vh;
+    }
+}

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <!--
+        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
+        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+
+        <!--imports-->
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/flat-ui.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/custom.css" />
+        <link rel="stylesheet" type="text/css" href="css/animate.css" />
+        <title>MapMyDay</title>
+    </head>
+
+    <body>
+        <!--wrapper for entire first page, used for toggling between pages-->
+        <div id="currentDayPage">
+
+            <!--current day start up page-->
+            <div id="currentDay" class="collapsingMargins">
+                <img id="homeSun" class="img-responsive animated wow bounceIn" src="images/homeSun.png"/>
+
+                <img id="cloud1" class="img-responsive clouds clouds3 wow animated slideInLeft" src="images/cloud_3.png" /> <!-- cloud with three layers -->
+                <img id="cloud2" class="img-responsive clouds clouds1 wow animated slideInRight" src="images/cloud_1.png" /> <!-- cloud with one layers -->
+                <img id="cloud3" class="img-responsive clouds clouds2 wow animated slideInRight" src="images/cloud_2.png" /> <!-- cloud with two layers -->
+
+                <img id="cloud4" class="img-responsive clouds clouds1 wow animated slideInLeft" src="images/cloud_1.png" /> <!-- cloud with one layers -->
+
+                <div class="container wow animated fadeIn" data-wow-duration="2s">
+                    <h1 id="mainText">Map My Day</h1>
+                    <hr class="line" />
+                    <p id="byLineText">By: Toby</p>
+                    <button id="startDay" class="btn btn-hg btn-primary">Start</button>
+                </div>
+            </div>
+
+            <!--current day, timing page-->
+            <div id="currentDayTiming">
+
+                <div class="topHeader bg-primary bg-recolor-blue text-center">
+                    <div class="topHeaderInner">
+                        <img class="logo img-responsive vertical-center" src="images/logo.png" /><h3 class="topHeaderText">Map My Day</h3>
+                    </div>
+                </div>
+
+                <div id="timingBody" class="bg-primary bg-recolor-offWhite">
+
+                    <div class="container">
+                        <div class="row row-slim">
+                            <div class="col-xs-12 text-center">
+                                <h3 id="productive" class="timingTitleFont">Productive</h3>
+                            </div>
+                            <div class="col-xs-12 text-center">
+                                <h3 id="productiveTime" class="timingText">00:00:00</h3>
+                            </div>
+
+                        </div>
+
+                        <div class="row row-slim">
+                            <div class="col-xs-12 text-center">
+                                <h3 id="wasted" class="timingTitleFont">Wasted</h3>
+                            </div>
+                            <div class="col-xs-12 text-center">
+                                <h3 id="wastedTime" class="timingText">00:00:00</h3>
+                            </div>
+
+                        </div>
+
+                        <div class="row row-slim">
+                            <div class="col-xs-12 text-center">
+                                <h3 id="efficiency" class="timingTitleFont">Efficiency</h3>
+                            </div>
+                            <div class="col-xs-12 text-center">
+                                <h3 id="efficiencyPercent" class="timingText">00.00%</h3>
+                            </div>
+                        </div>
+
+                        <div id="buttonRow" class="row row-slim">
+                            <div class="col-xs-6" style="padding-right: 1vw;">
+                                <button id="startButton" class="btn btn-primary btn-hg timeButton"></button>
+                            </div>
+                            <div class="col-xs-6" style="padding-left: 1vw;">
+                                <button id="stopButton" class="btn btn-danger btn-hg timeButton"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="buttonWrapper">
+
+                        <div id="controlButtons">
+                            <button id="pauseDay" class="btn btn-hg btn-info dayButton">Pause</button>
+                        </div>
+
+                        <div id="controlButtonsToggle">
+                            <button id="resumeDay" class="btn btn-hg btn-info dayButton">Resume</button>
+                            <button id="stopDay" class="btn btn-hg btn-danger dayButton">Finish</button>
+                        </div>
+
+                        <div id="controlButtonsToggleFinal">
+                            <button id="discardDay" class="btn btn-hg btn-danger dayButton">Discard</button>
+                            <button id="saveDay" class="btn btn-hg btn-primary dayButton">Save</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--table page-->
+        <div id="statPage">
+
+            <div class="topHeader bg-primary bg-recolor-blue text-center">
+                <div class="topHeaderInner">
+                    <h3 class="topHeaderText">Statistics</h3>
+                </div>
+            </div>
+
+            <div id="statBody" class="bg-primary bg-recolor-offWhite">
+                <!-- populated using js -->
+            </div>
+        </div>
+
+        <!-- graph page -->
+        <div id="trendsPage">
+
+            <div class="topHeader bg-primary bg-recolor-blue text-center">
+                <div class="topHeaderInner">
+                    <h3 class="topHeaderText">Trends</h3>
+                </div>
+            </div>
+
+            <div id="trendsBody" class="bg-primary bg-recolor-offWhite">
+                <div class="graphBox bg-recolor-lightGray">
+                    <div class="graphBoxInner">
+                        <h3 class="text-center removeSpacing graphBoxTitle">Efficiency (<span id="efficiencyChartRange">Last 7 Days</span>)</h3>
+                        
+                        <div id="efficiencyChartContainer" class="graphContainer">
+                            <canvas id="efficiencyChart7Days" width="5" height="5"></canvas>
+                            <canvas id="efficiencyChart14Days" width="5" height="5"></canvas>
+                            <canvas id="efficiencyChart30Days" width="5" height="5"></canvas>
+                        </div>
+
+                        <div id="efficiencySlider" class="slider removeSpacing"></div>
+                    </div>
+                </div>
+
+                <div class="graphBox bg-recolor-lightGray">
+                    <div class="graphBoxInner">
+                        <h3 class="text-center removeSpacing graphBoxTitle">Wasted Hours (<span id="totalStopTimeChartRange">Last 7 Days</span>)</h3>
+
+                        <div id="totalStopTimeChartContainer" class="graphContainer">
+                            <canvas id="totalStopTimeChart7Days" width="5" height="5"></canvas>
+                            <canvas id="totalStopTimeChart14Days" width="5" height="5"></canvas>
+                            <canvas id="totalStopTimeChart30Days" width="5" height="5"></canvas>
+                        </div>
+
+                        <div id="totalStopTimeSlider" class="slider removeSpacing"></div>
+                    </div>
+                </div>
+
+                <div class="graphBox bg-recolor-lightGray">
+                    <div class="graphBoxInner">
+                        <h3 class="text-center removeSpacing graphBoxTitle">Productive Hours (<span id="totalStartTimeChartRange">Last 7 Days</span>)</h3>
+
+                        <div id="totalStartTimeChartContainer" class="graphContainer">
+                            <canvas id="totalStartTimeChart7Days" width="5" height="5"></canvas>
+                            <canvas id="totalStartTimeChart14Days" width="5" height="5"></canvas>
+                            <canvas id="totalStartTimeChart30Days" width="5" height="5"></canvas>
+                        </div>
+
+                        <div id="totalStartTimeSlider" class="slider removeSpacing"></div>
+                    </div>
+                </div>
+
+                <div class="graphBox bg-recolor-lightGray" style="margin-bottom: 1.5vh;">
+                    <div class="graphBoxInner">
+
+                        <h3 class="text-center removeSpacing graphBoxTitle">Average Hours</h3>
+
+                        <div id="pieChartContainer" class="graphContainer">
+                            <canvas id="hoursPieChart" width="5" height="5"></canvas>
+                        </div>
+
+                        <div id="pieLegendContainer">
+                        <h3 class="pieLegend removeSpacing text-center"><span id="totalStartTimeLegendBox" class="legendBox"></span>Average Productive Hours - <span id="averageStartTimeLegendTime">00:00</span></h3>
+                        <h3 class="pieLegend removeSpacing text-center"><span id="totalStopTimeLegendBox" class="legendBox"></span>Average Wasted Hours - <span id="averageStopTimeLegendTime">00:00</span></h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- help page -->
+        <div id="helpPage">
+
+            <div class="topHeader bg-primary bg-recolor-blue text-center">
+                <div class="topHeaderInner">
+                    <h3 class="topHeaderText">Help</h3>
+                </div>
+            </div>
+
+            <div id="helpBody" class="bg-primary bg-recolor-offWhite">
+                <div class="container">
+
+                    <blockquote id="helpQuote">
+                        <p class="helpText">"Lost Time is never found again"</p>
+                        <footer class="helpText">Benjamin Franklin</footer>
+                    </blockquote>
+
+                    <hr id="helpLine" />
+
+                    <div id="helpBodyTextContainer">
+                        <p class="helpText helpBodyText">
+                            Map My Day is a productivity app that calculates how efficient you are at working.
+                        </p>
+
+                        <p class="helpText helpBodyText">
+                            Tap the green button when you're working.
+                        </p>
+
+                        <button class="demoButton btn btn-xs btn-success"></button>
+
+                        <p class="helpText helpBodyText">
+                            Tap the red button when you're not working.
+                        </p>
+
+                        <button class="demoButton btn btn-xs btn-danger"></button>
+
+                        <p class="helpText helpBodyText">
+                            Tap the pause button to stop both timers.
+                        </p>
+
+                        <button class="demoButton btn btn-xs btn-info">Pause</button>
+
+                    </div>
+                </div>
+
+                
+                <div class="bg-primary bg-recolor-blue text-center">
+                    <h1 style="font-size: 3em">Test Console</h1>
+
+                    <style>
+                        input {
+                            color: black;
+                        }
+                    </style>
+                    <input type="text" id="dateTest" /> <input type="text" id="efficiencyTest" /> <input type="text" id="totalStartTimeTest" /> <input type="text" id="totalStopTimeTest" />
+                    <br />
+                    <button id="testButton" class="btn btn-lg btn-success">Insert</button>
+
+                </div>
+                
+
+            </div>
+
+        </div>
+
+        <!--bottom navbar (never gets changed)-->
+        <nav id="navbarBottom" class="navbar navbar-fixed-bottom bg-primary bg-recolor-white">
+            <div id="navbarBottomInner">
+                <ul class="nav navbar-nav text-center">
+
+                    <li id="sunWrapper" class="nav-item">
+                        <a class="nav-link" href="#"><img id="sun" class="navbarBottomIcon image-center img-responsive" src="images/sun.png"/> 
+                            <span id="today" class="navbarBottomText">Start</span> 
+                        </a>
+                    </li>
+
+                    <li id="statWrapper" class="nav-item">
+                        <a class="nav-link" href="#"><img id="stats" class="navbarBottomIcon image-center img-responsive" src="images/stat.png"/> 
+                            <span id="statistics" class="navbarBottomText">Statistics</span>
+                        </a>
+                    </li>
+
+                    <li id="graphWrapper" class="nav-item">
+                        <a class="nav-link" href="#"><img id="graph" class="navbarBottomIcon image-center img-responsive" src="images/graph.png" />   
+                            <span id="trends" class="navbarBottomText">Trends</span>
+                        </a>
+                    </li>
+
+                    <li id="questionMarkWrapper" class="nav-item">
+                        <a class="nav-link" href="#"><img id="questionMark"class="navbarBottomIcon image-center img-responsive" src="images/questionMark.png" /> 
+                            <span id="help" class="navbarBottomText">Help</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+
+
+        <!--scripts-->
+        <script type="text/javascript" src="scripts/jquery.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+
+        <!--plugins-->
+        <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+        <script type="text/javascript" src="scripts/flat-ui.min.js"></script>
+        <script type="text/javascript" src="scripts/date.js"></script>
+        <script type="text/javascript" src="scripts/wow.js"></script>
+        <script type="text/javascript" src="scripts/Chart.js"></script>
+
+        <script type="text/javascript" src="scripts/index.js"></script>
+</body>
+</html>
